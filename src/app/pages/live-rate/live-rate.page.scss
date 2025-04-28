@@ -1,0 +1,262 @@
+:host {
+  --ion-background-color: var(--app-background-color);
+  --ion-text-color: var(--app-text-color);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.brand-name {
+  font-size: var(--app-font-size-xl);
+  font-weight: 600;
+  color: var(--app-primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+.sub-heading {
+  font-size: var(--app-font-size-sm);
+  color: var(--app-text-light);
+  margin: 0;
+  padding: 0;
+}
+
+.segment-container {
+  margin: 15px 0;
+  
+  ion-segment {
+    --background: var(--app-card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    ion-segment-button {
+      --color: var(--app-text-color);
+      --color-checked: var(--app-background-color);
+      --background-checked: var(--app-primary-color);
+      --indicator-color: transparent;
+      --border-radius: 0;
+      --border-style: none;
+      min-height: 35px;
+      font-size: var(--app-font-size-sm);
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.price-container {
+  background-color: var(--app-card-background);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-label {
+  font-size: var(--app-font-size-sm);
+  color: var(--app-text-light);
+  margin: 0 0 5px;
+  text-align: center;
+}
+
+.main-price {
+  font-size: var(--app-font-size-xxl);
+  font-weight: 700;
+  color: var(--app-text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.price-change-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 0 auto;
+  font-size: var(--app-font-size-md);
+  font-weight: 500;
+  width: fit-content;
+}
+
+.price-up {
+  color: #00FF00;
+}
+
+.price-up ion-icon {
+  color: #00FF00;
+  margin-right: 3px;
+}
+
+.price-down {
+  color: #FF0000;
+}
+
+.price-down ion-icon {
+  color: #FF0000;
+  margin-right: 3px;
+}
+
+.secondary-tabs {
+  display: flex;
+  margin: 15px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  color: var(--app-text-color);
+  background-color: var(--app-card-background);
+  font-weight: 500;
+  font-size: var(--app-font-size-sm);
+}
+
+.tab.active {
+  background-color: var(--app-primary-color);
+  color: var(--app-background-color);
+}
+
+.karat-prices-container {
+  margin: 15px 0;
+}
+
+.karat-price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--app-card-background);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+}
+
+.karat-label {
+  font-size: var(--app-font-size-md);
+  font-weight: 600;
+  color: var(--app-text-color);
+}
+
+.karat-price {
+  font-size: var(--app-font-size-md);
+  font-weight: 600;
+  color: var(--app-primary-color);
+}
+
+.coins-container {
+  margin: 15px 0;
+}
+
+.coin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--app-card-background);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+}
+
+.coin-icon {
+  margin-right: 10px;
+  
+  ion-icon {
+    font-size: 24px;
+    color: var(--app-primary-color);
+  }
+  
+  &.silver ion-icon {
+    color: #C0C0C0;
+  }
+}
+
+.coin-weight {
+  font-size: var(--app-font-size-md);
+  font-weight: 600;
+  color: var(--app-text-color);
+}
+
+.coin-price {
+  font-size: var(--app-font-size-md);
+  font-weight: 600;
+  color: var(--app-primary-color);
+  flex: 1;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.coin-arrow {
+  color: var(--app-text-light);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  
+  ion-spinner {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  
+  p {
+    color: var(--app-text-light);
+    font-size: var(--app-font-size-sm);
+  }
+}
+
+.footer-toolbar {
+  --background: var(--app-secondary-background);
+  --color: var(--app-text-color);
+  padding: 5px 0;
+}
+
+ion-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+ion-col.active {
+  color: var(--app-primary-color);
+}
+
+ion-col ion-icon {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+ion-col p {
+  margin: 0;
+  font-size: var(--app-font-size-xs);
+}

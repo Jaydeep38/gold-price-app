@@ -1,0 +1,107 @@
+<ion-content class="ion-padding" [fullscreen]="true" style="--background: #000000;">
+  <h1 class="page-title">Fancy Jewellers Collection</h1>
+
+  <div class="categories">
+    <div class="category" [ngClass]="{'active': selectedCategory === 'All'}" (click)="selectCategory('All')">All</div>
+    <div class="category" [ngClass]="{'active': selectedCategory === 'Necklace'}" (click)="selectCategory('Necklace')">Necklace</div>
+    <div class="category" [ngClass]="{'active': selectedCategory === 'Earrings'}" (click)="selectCategory('Earrings')">Earrings</div>
+    <div class="category" [ngClass]="{'active': selectedCategory === 'Ring'}" (click)="selectCategory('Ring')">Ring</div>
+    <div class="category" [ngClass]="{'active': selectedCategory === 'Bracelet'}" (click)="selectCategory('Bracelet')">Bracelet</div>
+  </div>
+
+  <div class="filter-dropdown">
+    <ion-select placeholder="All Qualities" interface="popover">
+      <ion-select-option value="all">All Qualities</ion-select-option>
+      <ion-select-option value="22k">22K</ion-select-option>
+      <ion-select-option value="20k">20K</ion-select-option>
+      <ion-select-option value="18k">18K</ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="products-grid">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="assets/images/mangalsutra1.jpg" alt="Mangal Sutra" class="product-image">
+        <div class="karat-badge">22K</div>
+      </div>
+      <div class="product-details">
+        <h3 class="product-name">Mangal Sutra</h3>
+        <div class="product-info">
+          <div class="price">₹108449</div>
+          <div class="weight">10.42g</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="assets/images/mangalsutra2.jpg" alt="Mangal Sutra" class="product-image">
+        <div class="karat-badge">22K</div>
+      </div>
+      <div class="product-details">
+        <h3 class="product-name">Mangal Sutra</h3>
+        <div class="product-info">
+          <div class="price">₹48891</div>
+          <div class="weight">4.74g</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="assets/images/mangalsutra3.jpg" alt="Mangal Sutra" class="product-image">
+        <div class="karat-badge">22K</div>
+      </div>
+      <div class="product-details">
+        <h3 class="product-name">Mangal Sutra</h3>
+        <div class="product-info">
+          <div class="price">₹98355</div>
+          <div class="weight">9.54g</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <div class="product-image-container">
+        <img src="assets/images/mangalsutra4.jpg" alt="Mangal Sutra" class="product-image">
+        <div class="karat-badge">22K</div>
+      </div>
+      <div class="product-details">
+        <h3 class="product-name">Mangal Sutra</h3>
+        <div class="product-info">
+          <div class="price">₹98252</div>
+          <div class="weight">9.53g</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('live-rate')">
+          <ion-icon name="analytics-outline"></ion-icon>
+          <p>Live Rate</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('calculator')">
+          <ion-icon name="calculator-outline"></ion-icon>
+          <p>Calculator</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center active">
+          <ion-icon name="diamond-outline"></ion-icon>
+          <p>Jewelry</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('contact')">
+          <ion-icon name="person-outline"></ion-icon>
+          <p>Profile</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,147 @@
+:host {
+  --ion-background-color: #000000;
+  --ion-text-color: #ffffff;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--app-primary-color);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  
+  &::-webkit-scrollbar {
+    height: 0;
+    display: none;
+  }
+}
+
+.category {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.category.active {
+  background-color: var(--app-primary-color);
+  color: black;
+}
+
+.filter-dropdown {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+  ion-select {
+    --placeholder-color: #ffffff;
+    --placeholder-opacity: 1;
+    --padding-start: 15px;
+    width: 100%;
+    color: white;
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.product-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-image-container {
+  position: relative;
+  height: 150px;
+  background-color: #444;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.karat-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--app-primary-color);
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-name {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--app-primary-color);
+}
+
+.weight {
+  color: #999;
+  font-size: 14px;
+}
+
+.footer-toolbar {
+  --background: #003344;
+  --color: #ffffff;
+  padding: 5px 0;
+}
+
+ion-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+ion-col.active {
+  color: var(--app-primary-color);
+}
+
+ion-col ion-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+ion-col p {
+  margin: 0;
+  font-size: 12px;
+}

@@ -1,0 +1,15 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#8B0000" />
+  <rect x="10" y="10" width="280" height="280" fill="#8B0000" stroke="#FFD700" stroke-width="4" />
+  
+  <!-- FJ letters stylized -->
+  <path d="M 80 70 L 140 70 L 140 90 L 100 90 L 100 130 L 130 130 L 130 150 L 100 150 L 100 220 L 80 220 Z" fill="#FFD700" />
+  <path d="M 150 70 C 180 70, 220 90, 220 130 C 220 170, 170 200, 170 220 L 150 220 C 150 180, 200 170, 200 130 C 200 110, 180 90, 150 90 Z" fill="#FFD700" />
+  
+  <!-- Diamond accent -->
+  <polygon points="180,100 190,90 200,100 190,110" fill="#FFD700" stroke="#FFFFFF" stroke-width="1" />
+  
+  <!-- "FANCY JEWELLERS" text -->
+  <text x="150" y="250" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#FFD700">FANCY JEWELLERS</text>
+  <text x="150" y="270" font-family="Arial" font-size="12" text-anchor="middle" fill="#FFD700">SINCE 1989</text>
+</svg> 

@@ -1,0 +1,142 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="logo-container">
+    <img src="assets/images/logo.svg" alt="Fancy Jewellers Logo" class="logo">
+    <h1 class="brand-name">Fancy Jewellers</h1>
+    <p class="sub-heading">{{ selectedTab === 'gold' ? 'Live Gold Rates' : 'Live Silver Rates' }}</p>
+  </div>
+
+  <!-- Tab switcher -->
+  <div class="segment-container">
+    <ion-segment [(ngModel)]="selectedTab" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="gold">
+        <ion-label>Gold</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="silver">
+        <ion-label>Silver</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Gold Price View -->
+  <div *ngIf="selectedTab === 'gold'">
+    <div class="price-container" *ngIf="goldPrice">
+      <p class="price-label">24K Gold (1 Tola / 10g)</p>
+      <h1 class="main-price">₹{{ get24KGoldPrice() | number: '1.0-2' }}</h1>
+      <div class="price-change-indicator" [ngClass]="getPriceChangeClass(goldPrice.priceChange)">
+        <ion-icon *ngIf="goldPrice.priceChange && goldPrice.priceChange > 0" name="arrow-up-outline"></ion-icon>
+        <ion-icon *ngIf="goldPrice.priceChange && goldPrice.priceChange < 0" name="arrow-down-outline"></ion-icon>
+        <span>₹{{ formatPriceChangeInr(goldPrice.priceChange) }}</span>
+      </div>
+    </div>
+
+    <div class="secondary-tabs">
+      <div class="tab" [ngClass]="{'active': !showingCoins}" (click)="showStandardRates()">Live Rate</div>
+      <div class="tab" [ngClass]="{'active': showingCoins}" (click)="showCoinRates('gold')">Coins</div>
+    </div>
+
+    <!-- Standard Rates View -->
+    <div *ngIf="!showingCoins">
+      <div class="karat-prices-container">
+        <div class="karat-price-item" *ngFor="let karatPrice of goldPrices | slice:1">
+          <div class="karat-label">{{ karatPrice.karat }}K</div>
+          <div class="karat-price">₹{{ karatPrice.pricePerGram * usdToInrRate * 10 | number: '1.0-2' }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coins View -->
+    <div *ngIf="showingCoins" class="coins-container">
+      <div class="coin-item" *ngFor="let coin of goldCoins">
+        <div class="coin-info">
+          <div class="coin-icon">
+            <ion-icon name="ellipse" color="warning"></ion-icon>
+          </div>
+          <div class="coin-weight">{{ coin.weight }}g</div>
+        </div>
+        <div class="coin-price">₹{{ coin.price | number: '1.0-2' }}</div>
+        <div class="coin-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Silver Price View -->
+  <div *ngIf="selectedTab === 'silver'">
+    <div class="price-container" *ngIf="silverPrice">
+      <p class="price-label">Pure Silver (1 Tola / 10g)</p>
+      <h1 class="main-price">₹{{ finalSilverPriceInr | number: '1.0-2' }}</h1>
+      <div class="price-change-indicator" [ngClass]="getPriceChangeClass(silverPrice.priceChange)">
+        <ion-icon *ngIf="silverPrice.priceChange && silverPrice.priceChange > 0" name="arrow-up-outline"></ion-icon>
+        <ion-icon *ngIf="silverPrice.priceChange && silverPrice.priceChange < 0" name="arrow-down-outline"></ion-icon>
+        <span>₹{{ formatPriceChangeInr(silverPrice.priceChange) }}</span>
+      </div>
+    </div>
+
+    <div class="secondary-tabs">
+      <div class="tab" [ngClass]="{'active': !showingCoins}" (click)="showStandardRates()">Live Rate</div>
+      <div class="tab" [ngClass]="{'active': showingCoins}" (click)="showCoinRates('silver')">Coins</div>
+    </div>
+
+    <!-- Standard Rates View -->
+    <div *ngIf="!showingCoins">
+      <div class="karat-prices-container">
+        <div class="karat-price-item" *ngFor="let purity of silverPrices">
+          <div class="karat-label">{{ purity.karat }} ({{ purity.purity * 100 }}%)</div>
+          <div class="karat-price">₹{{ purity.pricePerGram * usdToInrRate * 10 | number: '1.0-2' }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coins View -->
+    <div *ngIf="showingCoins" class="coins-container">
+      <div class="coin-item" *ngFor="let coin of silverCoins">
+        <div class="coin-info">
+          <div class="coin-icon silver">
+            <ion-icon name="ellipse"></ion-icon>
+          </div>
+          <div class="coin-weight">{{ coin.weight }}g</div>
+        </div>
+        <div class="coin-price">₹{{ coin.price | number: '1.0-2' }}</div>
+        <div class="coin-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <div *ngIf="(selectedTab === 'gold' && !goldPrice) || (selectedTab === 'silver' && !silverPrice)" class="loading-container">
+    <ion-spinner name="circular"></ion-spinner>
+    <p>Loading latest prices...</p>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" class="ion-text-center active">
+          <ion-icon name="analytics-outline"></ion-icon>
+          <p>Live Rate</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('calculator')">
+          <ion-icon name="calculator-outline"></ion-icon>
+          <p>Calculator</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('jewelry')">
+          <ion-icon name="diamond-outline"></ion-icon>
+          <p>Jewelry</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('contact')">
+          <ion-icon name="person-outline"></ion-icon>
+          <p>Profile</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

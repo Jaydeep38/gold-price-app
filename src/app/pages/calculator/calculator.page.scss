@@ -1,0 +1,206 @@
+:host {
+  --ion-background-color: var(--app-background-color);
+  --ion-text-color: var(--app-text-color);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.brand-name {
+  font-size: var(--app-font-size-xl);
+  font-weight: 600;
+  color: var(--app-primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+.sub-heading {
+  font-size: var(--app-font-size-sm);
+  color: var(--app-text-light);
+  margin: 0;
+  padding: 0;
+}
+
+.section-title {
+  color: var(--app-primary-color);
+  font-size: var(--app-font-size-md);
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.quality-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.quality-options .option {
+  flex-basis: calc(50% - 4px);
+  flex-grow: 0;
+  margin-bottom: 8px;
+}
+
+.option {
+  background-color: var(--app-card-background);
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+}
+
+.option.active {
+  background-color: var(--app-active-item-bg);
+  border: 1px solid var(--app-primary-color);
+}
+
+.option h3 {
+  margin: 0;
+  padding: 0;
+  font-size: var(--app-font-size-md);
+  font-weight: 600;
+  color: var(--app-text-color);
+}
+
+.option p {
+  margin: 5px 0 0;
+  padding: 0;
+  font-size: var(--app-font-size-xs);
+  color: var(--app-text-light);
+}
+
+.weight-input {
+  background-color: var(--app-card-background);
+  border-radius: 8px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.weight-input ion-input {
+  --color: var(--app-text-color);
+  --placeholder-color: var(--app-text-muted);
+  font-size: var(--app-font-size-md);
+  --padding-start: 0;
+}
+
+.unit {
+  color: var(--app-primary-color);
+  font-weight: 600;
+  font-size: var(--app-font-size-md);
+  margin-left: 10px;
+}
+
+.calculate-button {
+  background-color: var(--app-primary-color);
+  color: var(--app-background-color);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--app-font-size-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.calculate-button ion-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.footer-toolbar {
+  --background: var(--app-secondary-background);
+  --color: var(--app-text-color);
+  padding: 5px 0;
+}
+
+ion-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+ion-col.active {
+  color: var(--app-primary-color);
+}
+
+ion-col ion-icon {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+ion-col p {
+  margin: 0;
+  font-size: var(--app-font-size-xs);
+}
+
+.results-section {
+  margin-top: 25px;
+}
+
+.results-container {
+  background-color: var(--app-card-background);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.result-item:last-child {
+  margin-bottom: 0;
+}
+
+.result-label {
+  font-weight: 500;
+  color: var(--app-text-light);
+}
+
+.result-value {
+  font-weight: 600;
+  color: var(--app-text-color);
+}
+
+.result-item.total {
+  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+.result-item.total .result-label,
+.result-item.total .result-value {
+  font-weight: 700;
+  font-size: var(--app-font-size-lg);
+  color: var(--app-primary-color);
+}
+
+.making-charges-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 15px;
+}

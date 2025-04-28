@@ -1,0 +1,7 @@
+{
+  "name": "fancy-jewellers-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

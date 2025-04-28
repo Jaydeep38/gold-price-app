@@ -1,0 +1,76 @@
+<ion-content class="ion-padding" [fullscreen]="true" style="--background: #000000;">
+  <div class="logo-container">
+    <img src="assets/images/logo.svg" alt="Fancy Jewellers Logo" class="logo">
+    <h1 class="brand-name">Fancy Jewellers</h1>
+    <p class="sub-heading">Contact Fancy Jewellers</p>
+  </div>
+
+  <div class="contact-container">
+    <h2 class="contact-title">Contact Methods</h2>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </div>
+      <div class="contact-info">
+        <h3>WhatsApp</h3>
+        <p>+91 7879902029</p>
+      </div>
+      <div class="action-buttons">
+        <div class="action-button" (click)="openWhatsApp()">
+          <ion-icon name="open-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <ion-icon name="mail-outline"></ion-icon>
+      </div>
+      <div class="contact-info">
+        <h3>Email</h3>
+        <p>sagarfancyjewellers&#64;gmail.com</p>
+      </div>
+      <div class="action-buttons">
+        <div class="action-button" (click)="openEmail()">
+          <ion-icon name="open-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">
+        <ion-icon name="location-outline"></ion-icon>
+      </div>
+      <div class="contact-info">
+        <h3>Address</h3>
+        <p>Parkota Tower, Katra Bazaar, Sagar, Madhya Pradesh 470002</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('live-rate')">
+          <ion-icon name="analytics-outline"></ion-icon>
+          <p>Live Rate</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('calculator')">
+          <ion-icon name="calculator-outline"></ion-icon>
+          <p>Calculator</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center" (click)="navigateToPage('jewelry')">
+          <ion-icon name="diamond-outline"></ion-icon>
+          <p>Jewelry</p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center active">
+          <ion-icon name="person-outline"></ion-icon>
+          <p>Profile</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

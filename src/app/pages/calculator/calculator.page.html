@@ -1,0 +1,121 @@
+<ion-content>
+  <div class="ion-padding">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Logo" class="logo">
+      <h1 class="brand-name">Fancy Jewellers</h1>
+      <p class="sub-heading">Gold Price Calculator</p>
+    </div>
+    
+    <h2 class="section-title">Select Quality</h2>
+    <div class="quality-options">
+      <div class="option" 
+           [ngClass]="{'active': selectedQuality === '24K'}" 
+           (click)="selectQuality('24K')">
+        <h3>24K</h3>
+        <p>99.9% Pure</p>
+      </div>
+      <div class="option" 
+           [ngClass]="{'active': selectedQuality === '22K'}" 
+           (click)="selectQuality('22K')">
+        <h3>22K</h3>
+        <p>91.6% Pure</p>
+      </div>
+      <div class="option" 
+           [ngClass]="{'active': selectedQuality === '20K'}" 
+           (click)="selectQuality('20K')">
+        <h3>20K</h3>
+        <p>83.3% Pure</p>
+      </div>
+      <div class="option" 
+           [ngClass]="{'active': selectedQuality === '18K'}" 
+           (click)="selectQuality('18K')">
+        <h3>18K</h3>
+        <p>75.0% Pure</p>
+      </div>
+    </div>
+    
+    <h2 class="section-title">Making Charges</h2>
+    <div class="making-charges-options">
+      <div class="option" 
+           [ngClass]="{'active': selectedMakingCharge === 8}" 
+           (click)="selectMakingCharge(8)">
+        <h3>8%</h3>
+        <p>Basic</p>
+      </div>
+      <div class="option" 
+           [ngClass]="{'active': selectedMakingCharge === 12}" 
+           (click)="selectMakingCharge(12)">
+        <h3>12%</h3>
+        <p>Standard</p>
+      </div>
+      <div class="option" 
+           [ngClass]="{'active': selectedMakingCharge === 15}" 
+           (click)="selectMakingCharge(15)">
+        <h3>15%</h3>
+        <p>Premium</p>
+      </div>
+    </div>
+    
+    <h2 class="section-title">Enter Weight</h2>
+    <div class="weight-input">
+      <ion-input type="number" 
+                placeholder="Enter weight" 
+                [(ngModel)]="weight">
+      </ion-input>
+      <div class="unit">Grams</div>
+    </div>
+    
+    <div class="calculate-button" (click)="calculatePrice()">
+      <ion-icon name="calculator-outline"></ion-icon>
+      Calculate Price
+    </div>
+    
+    <!-- Results Section -->
+    <div class="results-section" *ngIf="showResults">
+      <h2 class="section-title">Price Calculation</h2>
+      <div class="results-container">
+        <div class="result-item">
+          <div class="result-label">Weight:</div>
+          <div class="result-value">{{weight}}g</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Quality:</div>
+          <div class="result-value">{{selectedQuality}}</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Making Charges:</div>
+          <div class="result-value">{{selectedMakingCharge}}%</div>
+        </div>
+        <div class="result-item total">
+          <div class="result-label">Total Price:</div>
+          <div class="result-value">₹{{totalPrice.toFixed(2)}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="navigateToPage('live-rate')">
+          <ion-icon name="trending-up-outline"></ion-icon>
+          <p>Live Rate</p>
+        </ion-col>
+        <ion-col class="active">
+          <ion-icon name="calculator-outline"></ion-icon>
+          <p>Calculator</p>
+        </ion-col>
+        <ion-col (click)="navigateToPage('jewelry')">
+          <ion-icon name="diamond-outline"></ion-icon>
+          <p>Jewelry</p>
+        </ion-col>
+        <ion-col (click)="navigateToPage('contact')">
+          <ion-icon name="call-outline"></ion-icon>
+          <p>Contact</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

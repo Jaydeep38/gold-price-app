@@ -1,0 +1,135 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Import Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global Variables */
+:root {
+  /* Colors */
+  --app-primary-color: #8A2BE2;
+  --app-background-color: #000000;
+  --app-card-background: #2a2a2a;
+  --app-secondary-background: #003344;
+  --app-text-color: #ffffff;
+  --app-text-light: #cccccc;
+  --app-text-muted: #999999;
+  --app-success-color: #2dd36f;
+  --app-danger-color: #eb445a;
+  --app-active-item-bg: #3a3a3a;
+  
+  /* Typography */
+  --app-font-family: 'Poppins', sans-serif;
+  --app-font-size-xs: 0.75rem;
+  --app-font-size-sm: 0.875rem;  
+  --app-font-size-md: 1rem;
+  --app-font-size-lg: 1.25rem;
+  --app-font-size-xl: 1.5rem;
+  --app-font-size-xxl: 2rem;
+}
+
+/* Apply to the entire app */
+* {
+  font-family: var(--app-font-family);
+}
+
+/* Override Ionic Defaults */
+ion-content {
+  --background: var(--app-background-color);
+  --color: var(--app-text-color);
+}
+
+ion-alert {
+  --background: var(--app-card-background);
+  --color: var(--app-text-color);
+  font-family: var(--app-font-family);
+  
+  .alert-title {
+    color: var(--app-primary-color);
+    font-weight: 600;
+  }
+
+  .alert-message {
+    color: var(--app-text-color);
+  }
+
+  .alert-button {
+    color: var(--app-primary-color);
+  }
+}
+
+/* General styling classes */
+.text-primary {
+  color: var(--app-primary-color);
+}
+
+.text-light {
+  color: var(--app-text-light);
+}
+
+.text-muted {
+  color: var(--app-text-muted);
+}
+
+.text-success {
+  color: var(--app-success-color);
+}
+
+.text-danger {
+  color: var(--app-danger-color);
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+/* Card styling */
+.app-card {
+  background-color: var(--app-card-background);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
